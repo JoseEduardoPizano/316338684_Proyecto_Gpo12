@@ -1,0 +1,75 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(514,5): warning MSB8028: El directorio intermedio (Debug\) contiene archivos compartidos de otro proyecto (P8_1.vcxproj). Esto puede dar lugar a un comportamiento incorrecto de limpieza y recompilación.
+  iluminacion2.cpp
+C:\Users\lalop\OneDrive\Documentos\Visual Studio 2022\Practicas\P9\P8_1\iluminacion2.cpp(197,24): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\lalop\OneDrive\Documentos\Visual Studio 2022\Practicas\P9\P8_1\iluminacion2.cpp(232,20): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+C:\Users\lalop\OneDrive\Documentos\Visual Studio 2022\Practicas\P9\P8_1\iluminacion2.cpp(233,20): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+C:\Users\lalop\OneDrive\Documentos\Visual Studio 2022\Practicas\P9\P8_1\iluminacion2.cpp(234,20): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+C:\Users\lalop\OneDrive\Documentos\Visual Studio 2022\Practicas\P9\P8_1\iluminacion2.cpp(238,22): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+C:\Users\lalop\OneDrive\Documentos\Visual Studio 2022\Practicas\P9\P8_1\iluminacion2.cpp(239,22): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+C:\Users\lalop\OneDrive\Documentos\Visual Studio 2022\Practicas\P9\P8_1\iluminacion2.cpp(240,22): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+C:\Users\lalop\OneDrive\Documentos\Visual Studio 2022\Practicas\P9\P8_1\iluminacion2.cpp(244,22): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+C:\Users\lalop\OneDrive\Documentos\Visual Studio 2022\Practicas\P9\P8_1\iluminacion2.cpp(245,22): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+C:\Users\lalop\OneDrive\Documentos\Visual Studio 2022\Practicas\P9\P8_1\iluminacion2.cpp(246,22): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+C:\Users\lalop\OneDrive\Documentos\Visual Studio 2022\Practicas\P9\P8_1\iluminacion2.cpp(250,22): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+C:\Users\lalop\OneDrive\Documentos\Visual Studio 2022\Practicas\P9\P8_1\iluminacion2.cpp(251,22): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+C:\Users\lalop\OneDrive\Documentos\Visual Studio 2022\Practicas\P9\P8_1\iluminacion2.cpp(252,22): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+C:\Users\lalop\OneDrive\Documentos\Visual Studio 2022\Practicas\P9\P8_1\iluminacion2.cpp(555,11): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\lalop\OneDrive\Documentos\Visual Studio 2022\Practicas\P9\P8_1\iluminacion2.cpp(556,11): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\lalop\OneDrive\Documentos\Visual Studio 2022\Practicas\P9\P8_1\iluminacion2.cpp(560,18): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\lalop\OneDrive\Documentos\Visual Studio 2022\Practicas\P9\P8_1\iluminacion2.cpp(561,18): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\lalop\OneDrive\Documentos\Visual Studio 2022\Practicas\P9\P8_1\iluminacion2.cpp(563,10): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\lalop\OneDrive\Documentos\Visual Studio 2022\Practicas\P9\P8_1\iluminacion2.cpp(564,10): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+LINK : warning LNK4098: la biblioteca predeterminada'MSVCRT' entra en conflicto con otras bibliotecas; use la biblioteca /NODEFAULTLIB:biblioteca
+soil2-debug.lib(etc1_utils.obj) : warning LNK4099: no se encontró PDB 'soil2-debug.pdb' con 'soil2-debug.lib(etc1_utils.obj)' o en 'C:\Users\lalop\OneDrive\Documentos\Visual Studio 2022\Practicas\P9\Debug\soil2-debug.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+soil2-debug.lib(image_DXT.obj) : warning LNK4099: no se encontró PDB 'soil2-debug.pdb' con 'soil2-debug.lib(image_DXT.obj)' o en 'C:\Users\lalop\OneDrive\Documentos\Visual Studio 2022\Practicas\P9\Debug\soil2-debug.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+soil2-debug.lib(image_helper.obj) : warning LNK4099: no se encontró PDB 'soil2-debug.pdb' con 'soil2-debug.lib(image_helper.obj)' o en 'C:\Users\lalop\OneDrive\Documentos\Visual Studio 2022\Practicas\P9\Debug\soil2-debug.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+soil2-debug.lib(SOIL2.obj) : warning LNK4099: no se encontró PDB 'soil2-debug.pdb' con 'soil2-debug.lib(SOIL2.obj)' o en 'C:\Users\lalop\OneDrive\Documentos\Visual Studio 2022\Practicas\P9\Debug\soil2-debug.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+  P8_1.vcxproj -> C:\Users\lalop\OneDrive\Documentos\Visual Studio 2022\Practicas\P9\Debug\P9.exe
