@@ -168,6 +168,7 @@ int main()
 	Model Silla((char*)"Models/Objetos2/Silla1.obj");
 	Model Silla2((char*)"Models/Objetos2/Silla2.obj");
 	Model Sofa((char*)"Models/Objetos2/Sofa.obj");
+	Model MesaCentro((char*)"Models/Objetos2/MesaCentro.obj");
 
 
 
@@ -334,7 +335,7 @@ int main()
 		Silla.Draw(lampShader);
 
 		model = glm::mat4(1);
-		//model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
+		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		Silla2.Draw(lampShader);
 
@@ -342,6 +343,11 @@ int main()
 		//model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		Mesa.Draw(lampShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		MesaCentro.Draw(lampShader);
 
 		model = glm::mat4(1);
 		//model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));

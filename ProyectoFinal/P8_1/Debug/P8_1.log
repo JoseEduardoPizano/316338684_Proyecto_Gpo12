@@ -1,11 +1,6 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(514,5): warning MSB8028: El directorio intermedio (Debug\) contiene archivos compartidos de otro proyecto (P8_1.vcxproj). Esto puede dar lugar a un comportamiento incorrecto de limpieza y recompilación.
   iluminacion2.cpp
-C:\Users\lalop\OneDrive\Documentos\Repositorio\316338684_Proyecto_Gpo12\ProyectoFinal\P8_1\iluminacion2.cpp(201,24): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-C:\Users\lalop\OneDrive\Documentos\Repositorio\316338684_Proyecto_Gpo12\ProyectoFinal\P8_1\iluminacion2.cpp(236,20): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
-          with
-          [
-              T=float
-          ]
+C:\Users\lalop\OneDrive\Documentos\Repositorio\316338684_Proyecto_Gpo12\ProyectoFinal\P8_1\iluminacion2.cpp(202,24): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
 C:\Users\lalop\OneDrive\Documentos\Repositorio\316338684_Proyecto_Gpo12\ProyectoFinal\P8_1\iluminacion2.cpp(237,20): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
           with
           [
@@ -16,14 +11,17 @@ C:\Users\lalop\OneDrive\Documentos\Repositorio\316338684_Proyecto_Gpo12\Proyecto
           [
               T=float
           ]
-C:\Users\lalop\OneDrive\Documentos\Repositorio\316338684_Proyecto_Gpo12\ProyectoFinal\P8_1\iluminacion2.cpp(496,11): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-C:\Users\lalop\OneDrive\Documentos\Repositorio\316338684_Proyecto_Gpo12\ProyectoFinal\P8_1\iluminacion2.cpp(497,11): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-C:\Users\lalop\OneDrive\Documentos\Repositorio\316338684_Proyecto_Gpo12\ProyectoFinal\P8_1\iluminacion2.cpp(501,18): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-C:\Users\lalop\OneDrive\Documentos\Repositorio\316338684_Proyecto_Gpo12\ProyectoFinal\P8_1\iluminacion2.cpp(502,18): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-C:\Users\lalop\OneDrive\Documentos\Repositorio\316338684_Proyecto_Gpo12\ProyectoFinal\P8_1\iluminacion2.cpp(504,10): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-C:\Users\lalop\OneDrive\Documentos\Repositorio\316338684_Proyecto_Gpo12\ProyectoFinal\P8_1\iluminacion2.cpp(505,10): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
-LINK : warning LNK4098: la biblioteca predeterminada'MSVCRT' entra en conflicto con otras bibliotecas; use la biblioteca /NODEFAULTLIB:biblioteca
-soil2-debug.lib(etc1_utils.obj) : warning LNK4099: no se encontró PDB 'soil2-debug.pdb' con 'soil2-debug.lib(etc1_utils.obj)' o en 'C:\Users\lalop\OneDrive\Documentos\Repositorio\316338684_Proyecto_Gpo12\ProyectoFinal\Debug\soil2-debug.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
+C:\Users\lalop\OneDrive\Documentos\Repositorio\316338684_Proyecto_Gpo12\ProyectoFinal\P8_1\iluminacion2.cpp(239,20): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+C:\Users\lalop\OneDrive\Documentos\Repositorio\316338684_Proyecto_Gpo12\ProyectoFinal\P8_1\iluminacion2.cpp(502,11): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\lalop\OneDrive\Documentos\Repositorio\316338684_Proyecto_Gpo12\ProyectoFinal\P8_1\iluminacion2.cpp(503,11): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\lalop\OneDrive\Documentos\Repositorio\316338684_Proyecto_Gpo12\ProyectoFinal\P8_1\iluminacion2.cpp(507,18): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\lalop\OneDrive\Documentos\Repositorio\316338684_Proyecto_Gpo12\ProyectoFinal\P8_1\iluminacion2.cpp(508,18): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\lalop\OneDrive\Documentos\Repositorio\316338684_Proyecto_Gpo12\ProyectoFinal\P8_1\iluminacion2.cpp(510,10): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\lalop\OneDrive\Documentos\Repositorio\316338684_Proyecto_Gpo12\ProyectoFinal\P8_1\iluminacion2.cpp(511,10): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
 soil2-debug.lib(image_DXT.obj) : warning LNK4099: no se encontró PDB 'soil2-debug.pdb' con 'soil2-debug.lib(image_DXT.obj)' o en 'C:\Users\lalop\OneDrive\Documentos\Repositorio\316338684_Proyecto_Gpo12\ProyectoFinal\Debug\soil2-debug.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
 soil2-debug.lib(image_helper.obj) : warning LNK4099: no se encontró PDB 'soil2-debug.pdb' con 'soil2-debug.lib(image_helper.obj)' o en 'C:\Users\lalop\OneDrive\Documentos\Repositorio\316338684_Proyecto_Gpo12\ProyectoFinal\Debug\soil2-debug.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
 soil2-debug.lib(SOIL2.obj) : warning LNK4099: no se encontró PDB 'soil2-debug.pdb' con 'soil2-debug.lib(SOIL2.obj)' o en 'C:\Users\lalop\OneDrive\Documentos\Repositorio\316338684_Proyecto_Gpo12\ProyectoFinal\Debug\soil2-debug.pdb'; se vinculará el objeto sin tener en cuenta información de depuración
