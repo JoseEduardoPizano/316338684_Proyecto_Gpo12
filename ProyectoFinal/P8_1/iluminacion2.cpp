@@ -44,6 +44,32 @@ glm::vec3 lightPos(0.0f, 0.0f, 0.0f);
 bool active;
 
 float tiempo;
+float rotacion;
+
+
+bool ventana = false;
+float transVent1;
+float transVent2;
+float transVent3;
+float transVent4;
+float transVent5;
+float transVent6;
+float transVent7;
+
+bool ventana2 = false;
+float rotVent1;
+float rotVent2;
+float rotVent3;
+float rotVent4;
+float rotVent5;
+float rotVent6;
+float rotVent7;
+float rotVent8;
+
+bool puerta = false;
+float rotPuerta1;
+float rotPuerta2;
+
 
 
 // Positions of the point lights
@@ -170,6 +196,40 @@ int main()
 	Model SillaE((char*)"Models/Objetos2/SillaE.obj");
 	Model Sofa((char*)"Models/Objetos2/Sofa.obj");
 	Model MesaCentro((char*)"Models/Objetos2/MesaCentro.obj");
+
+	Model Ventana1((char*)"Models/Objetos2/Ventana1.obj");
+	Model Ventana2((char*)"Models/Objetos2/Ventana2.obj");
+	Model Ventana3((char*)"Models/Objetos2/Ventana3.obj");
+	Model Ventana4((char*)"Models/Objetos2/Ventana4.obj");
+	Model Ventana5((char*)"Models/Objetos2/Ventana5.obj");
+	Model Ventana6((char*)"Models/Objetos2/Ventana6.obj");
+	Model Ventana7((char*)"Models/Objetos2/Ventana7.obj");
+	Model Ventana8((char*)"Models/Objetos2/Ventana8.obj");
+	Model Ventana9((char*)"Models/Objetos2/Ventana9.obj");
+	Model Ventana10((char*)"Models/Objetos2/Ventana10.obj");
+	Model Ventana11((char*)"Models/Objetos2/Ventana11.obj");
+	Model Ventana12((char*)"Models/Objetos2/Ventana12.obj");
+	Model Ventana13((char*)"Models/Objetos2/Ventana13.obj");
+	Model Ventana14((char*)"Models/Objetos2/Ventana14.obj");
+	Model Ventana15((char*)"Models/Objetos2/Ventana15.obj");
+
+	Model VentanaT2_1((char*)"Models/Objetos2/VentanaT2_1.obj");
+	Model VentanaT2_2((char*)"Models/Objetos2/VentanaT2_2.obj");
+	Model VentanaT2_3((char*)"Models/Objetos2/VentanaT2_3.obj");
+	Model VentanaT2_4((char*)"Models/Objetos2/VentanaT2_4.obj");
+	Model VentanaT2_5((char*)"Models/Objetos2/VentanaT2_5.obj");
+	Model VentanaT2_6((char*)"Models/Objetos2/VentanaT2_6.obj");
+	Model VentanaT2_7((char*)"Models/Objetos2/VentanaT2_7.obj");
+	Model VentanaT2_8((char*)"Models/Objetos2/VentanaT2_8.obj");
+
+	Model PuertaPrincipal((char*)"Models/Objetos2/PuertaPrincipal.obj");
+	Model Puerta2((char*)"Models/Objetos2/Puerta2.obj");
+	Model Zaguan1((char*)"Models/Objetos2/Zaguan1.obj");
+	Model Zaguan2((char*)"Models/Objetos2/Zaguan2.obj");
+
+	Model agua((char*)"Models/Objetos2/agua.obj");
+
+
 
 
 
@@ -331,7 +391,7 @@ int main()
 		Barra.Draw(lampShader);
 
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
+		model = glm::translate(model, glm::vec3(0.0f, 0.3f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		Silla.Draw(lampShader);
 
@@ -341,6 +401,13 @@ int main()
 		Silla2.Draw(lampShader);
 
 		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, 0.1f, -1.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		Silla2.Draw(lampShader);
+
+		
+		model = glm::mat4(1);
+		//model = glm::rotate(model, glm::radians(rotacion), glm::vec3(0.0f, 1.0f, 0.0f));
 		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		SillaE.Draw(lampShader);
@@ -359,8 +426,130 @@ int main()
 		//model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		Sofa.Draw(lampShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		Ventana1.Draw(lampShader);
 		
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		Ventana2.Draw(lampShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		Ventana3.Draw(lampShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		Ventana4.Draw(lampShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		Ventana5.Draw(lampShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		Ventana6.Draw(lampShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		Ventana7.Draw(lampShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		Ventana8.Draw(lampShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		Ventana9.Draw(lampShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		Ventana10.Draw(lampShader);
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		Ventana11.Draw(lampShader);
 		glBindVertexArray(0);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		Ventana12.Draw(lampShader);
+
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		Ventana13.Draw(lampShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		Ventana14.Draw(lampShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		Ventana15.Draw(lampShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		VentanaT2_1.Draw(lampShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		VentanaT2_2.Draw(lampShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		VentanaT2_3.Draw(lampShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		VentanaT2_4.Draw(lampShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		VentanaT2_5.Draw(lampShader);
+
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		VentanaT2_6.Draw(lampShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		VentanaT2_7.Draw(lampShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
+		model = glm::rotate(model, glm::radians(rotacion), glm::vec3(0.0f, 1.0f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		VentanaT2_8.Draw(lampShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
+		//model = glm::rotate(model, glm::radians(rotacion), glm::vec3(0.0f, 1.0f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		agua.Draw(lampShader);
 
 
 		/*Anim.Use();
@@ -464,6 +653,15 @@ void DoMovement()
 		pointLightPositions[0].z += 0.01f;
 	}
 
+	if (keys[GLFW_KEY_1])
+	{
+		rotacion -= 0.1f;
+	}
+	if (keys[GLFW_KEY_2])
+	{
+		rotacion+= 0.01f;
+	}
+
 	
 }
 
@@ -499,6 +697,43 @@ void KeyCallback(GLFWwindow *window, int key, int scancode, int action, int mode
 			Light1 = glm::vec3(0);//Cuado es solo un valor en los 3 vectores pueden dejar solo una componente
 		}
 	}
+
+	if (keys[GLFW_KEY_V])
+	{
+		if (ventana==true) {ventana = false;}else {ventana = true;}
+	}
+	if (keys[GLFW_KEY_B])
+	{
+		if (ventana2 == true) { ventana2 = false; }else { ventana2 = true; }
+	}
+
+	if (keys[GLFW_KEY_P])
+	{
+		if (puerta == true) { puerta = false; }	else { puerta = true; }
+	}
+
+	if (ventana == true && keys[GLFW_KEY_1]) { transVent1 = 1.0; }	else { transVent1 = 0.0; }
+	if (ventana == true && keys[GLFW_KEY_2]) { transVent1 = 1.0; }	else { transVent1 = 0.0; }
+	if (ventana == true && keys[GLFW_KEY_3]) { transVent1 = 1.0; } 	else { transVent1 = 0.0; }
+	if (ventana == true && keys[GLFW_KEY_4]) { transVent1 = 1.0; } 	else { transVent1 = 0.0; }
+	if (ventana == true && keys[GLFW_KEY_5]) { transVent1 = 1.0; } 	else { transVent1 = 0.0; }
+	if (ventana == true && keys[GLFW_KEY_6]) { transVent1 = 1.0; }	else { transVent1 = 0.0; }
+	if (ventana == true && keys[GLFW_KEY_7]) { transVent1 = 1.0; }	else { transVent1 = 0.0; }
+
+	if (ventana2 == true && keys[GLFW_KEY_1]) { rotVent1 = 90.0; }	else { rotVent1 = 0.0; }
+	if (ventana2 == true && keys[GLFW_KEY_2]) { rotVent2 = 90.0; }	else { rotVent2 = 0.0; }
+	if (ventana2 == true && keys[GLFW_KEY_3]) { rotVent3 = 90.0; }	else { rotVent3 = 0.0; }
+	if (ventana2 == true && keys[GLFW_KEY_4]) { rotVent4 = 90.0; }	else { rotVent4 = 0.0; }
+	if (ventana2 == true && keys[GLFW_KEY_5]) { rotVent5 = 90.0; }	else { rotVent5 = 0.0; }
+	if (ventana2 == true && keys[GLFW_KEY_6]) { rotVent6 = 90.0; }	else { rotVent6 = 0.0; }
+	if (ventana2 == true && keys[GLFW_KEY_7]) { rotVent7 = 90.0; }	else { rotVent7 = 0.0; }
+	if (ventana2 == true && keys[GLFW_KEY_8]) { rotVent8 = 90.0; }	else { rotVent8 = 0.0; }
+
+	if (puerta == true && keys[GLFW_KEY_1]) { rotPuerta1 = 90.0; }  else { rotVent8 = 0.0; }
+	if (puerta == true && keys[GLFW_KEY_2]) { rotPuerta2 = 90.0; }	else { rotVent8 = 0.0; }
+
+	
+
 }
 
 void MouseCallback(GLFWwindow *window, double xPos, double yPos)
