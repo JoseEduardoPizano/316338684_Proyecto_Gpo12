@@ -559,27 +559,30 @@ int main()
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		VentanaT2_4.Draw(lampShader);
 
+
+
+
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
+		model = glm::translate(model, glm::vec3(-12.35f, 0.1f, -2.325));
 		model = glm::rotate(model, glm::radians(-rotVent5), glm::vec3(0.0f, 1.0f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		VentanaT2_5.Draw(lampShader);
 
 
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
+		model = glm::translate(model, glm::vec3(-12.35f, 0.1f, -1.725f));
 		model = glm::rotate(model, glm::radians(rotVent6), glm::vec3(0.0f, 1.0f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		VentanaT2_6.Draw(lampShader);
 
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
+		model = glm::translate(model, glm::vec3(-12.35f, 0.1f, -1.05f));
 		model = glm::rotate(model, glm::radians(-rotVent7), glm::vec3(0.0f, 1.0f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		VentanaT2_7.Draw(lampShader);
 
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
+		model = glm::translate(model, glm::vec3(-12.4f, 0.1f, -0.425));
 		model = glm::rotate(model, glm::radians(rotVent8), glm::vec3(0.0f, 1.0f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		VentanaT2_8.Draw(lampShader);
