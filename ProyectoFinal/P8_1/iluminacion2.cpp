@@ -90,7 +90,7 @@ bool zaguanCerrar = false;
 bool puertaAbrir = false;
 bool puertaCerrar = false;
 
-
+bool piscinaEncendida = false;
 
 float x;
 float y;
@@ -587,11 +587,19 @@ int main()
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		VentanaT2_8.Draw(lampShader);
 
-		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
-		//model = glm::rotate(model, glm::radians(rotacion), glm::vec3(0.0f, 1.0f, 0.0f));
+		glBindVertexArray(0);
+		Anim.Use();
+		tiempo = glfwGetTime();
+		modelLoc = glGetUniformLocation(Anim.Program, "model");
+		viewLoc = glGetUniformLocation(Anim.Program, "view");
+		projLoc = glGetUniformLocation(Anim.Program, "projection");
+		glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
+		glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(projection));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		agua.Draw(lampShader);
+		model = glm::mat4(1);
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		if (piscinaEncendida == true) { glUniform1f(glGetUniformLocation(Anim.Program, "time"), tiempo); }
+		agua.Draw(Anim);
 
 
 
@@ -835,6 +843,18 @@ void KeyCallback(GLFWwindow *window, int key, int scancode, int action, int mode
 			printf("Puertas Activadas\n"); 
 			puerta = true; }
 	}
+	if (keys[GLFW_KEY_N])
+	{
+		if (piscinaEncendida == true) {
+			printf("Piscina Desactivasas\n");
+			piscinaEncendida = false;
+		}
+		else {
+			printf("Piscina Activadas\n");
+			piscinaEncendida = true;
+		}
+	}
+	
 
 	if (ventana == true && keys[GLFW_KEY_1]) { transVent1 = 1.0; }	else { transVent1 = 0.0; }
 	if (ventana == true && keys[GLFW_KEY_2]) { transVent1 = 1.0; }	else { transVent1 = 0.0; }
