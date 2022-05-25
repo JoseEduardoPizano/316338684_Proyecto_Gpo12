@@ -48,6 +48,27 @@ map_Kd maderaOscura.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00
+newmtl Silla1_Silla_lambert2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd texturaGris.jpg
+Ni 1.00
+newmtl Silla1_Silla_lambert3SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd texturaGris.jpg
+Ni 1.00
+newmtl Silla1_Silla_lambert5SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd maderaCafeOscuro.jpg
+Ni 1.00
 newmtl Silla2_lambert2SG
 illum 4
 Kd 0.00 0.00 0.00
@@ -212,7 +233,7 @@ illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
-map_Kd blanco.png
+map_Kd blancoPared.jpg
 Ni 1.00
 newmtl lambert13SG
 illum 4
@@ -226,7 +247,14 @@ illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
-map_Kd blanco.png
+map_Kd paredExterior.jpg
+Ni 1.00
+newmtl lambert16SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd paredExterior.jpg
 Ni 1.00
 newmtl mesaCentro_phong2SG4
 illum 4
@@ -251,10 +279,8 @@ illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
-map_Kd blanco.png
+map_Kd blancoPared.jpg
 Ni 1.00
-Ks 0.50 0.50 0.50
-Ns 18.00
 newmtl phong2SG
 illum 4
 Kd 0.00 0.00 0.00
@@ -421,7 +447,7 @@ illum 4
 Kd 0.00 0.00 0.00
 Ka 0.00 0.00 0.00
 Tf 1.00 1.00 1.00
-map_Kd blanco.png
+map_Kd paredExterior.jpg
 Ni 1.00
 Ks 0.50 0.50 0.50
 Ns 18.00

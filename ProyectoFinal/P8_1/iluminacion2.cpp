@@ -286,7 +286,9 @@ int main()
 	// Set texture units
 	lightingShader.Use();
 	glUniform1i(glGetUniformLocation(lightingShader.Program, "material.diffuse"), 0);
-	//glUniform1i(glGetUniformLocation(lightingShader.Program, "specular"),1);
+	glUniform1i(glGetUniformLocation(lightingShader.Program, "specular"),1);
+
+
 
 	glm::mat4 projection = glm::perspective(camera.GetZoom(), (GLfloat)SCREEN_WIDTH / (GLfloat)SCREEN_HEIGHT, 0.1f, 100.0f);
 
@@ -325,7 +327,7 @@ int main()
 		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.direction"), -0.2f, -1.0f, -0.3f);
 		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.ambient"),0.1f,0.1f,0.1f);
 		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.diffuse"), 0.1f, 0.1f, 0.1f);
-		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.specular"),0.7f, 0.7f, 0.7f);
+		glUniform3f(glGetUniformLocation(lightingShader.Program, "dirLight.specular"),0.5f, 0.5f, 0.5f);
 
 
 		// Point light 1
@@ -419,6 +421,9 @@ int main()
 		model = glm::translate(model, glm::vec3(0.0f,0.1f,0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		Casa.Draw(lampShader);
+
+
+
 
 		model = glm::mat4(1);
 		//model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
@@ -526,10 +531,21 @@ int main()
 		Cuadro.Draw(lampShader);
 
 
-		model = glm::mat4(1);
+		glEnable(GL_BLEND);//Avtiva la funcionalidad para trabajar el canal alfa
+		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
 		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		Ventana1.Draw(lampShader);
+		glUniform1i(glGetUniformLocation(lightingShader.Program, "ActivaTransparencia"), 0);
+		//Ventana1.Draw(lightingShader);
+		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0, 1.0, 1.0, 0.25);
+		Ventana1.Draw(lightingShader);
+		glDisable(GL_BLEND);  //Desactiva el canal alfa 
+
+		/*model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		Ventana1.Draw(lampShader);*/
 		
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
