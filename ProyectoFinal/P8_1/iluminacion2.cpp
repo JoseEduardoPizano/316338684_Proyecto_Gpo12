@@ -223,6 +223,13 @@ int main()
 	Model Sofa((char*)"Models/Objetos2/Sofa.obj");
 	Model MesaCentro((char*)"Models/Objetos2/MesaCentro.obj");
 
+
+	Model Sillon((char*)"Models/Objetos2/Sillon.obj");
+	Model Cuadro((char*)"Models/Objetos2/Cuadro.obj");
+	Model Escritorio((char*)"Models/Objetos2/Escritorio.obj");
+	Model SillaEscritorio((char*)"Models/Objetos2/SillaDeEscritorio.obj");
+	//Model Cama((char*)"Models/Objetos2/Cama.obj");
+
 	Model Ventana1((char*)"Models/Objetos2/Ventana1.obj");
 	Model Ventana2((char*)"Models/Objetos2/Ventana2.obj");
 	Model Ventana3((char*)"Models/Objetos2/Ventana3.obj");
@@ -238,6 +245,7 @@ int main()
 	Model Ventana13((char*)"Models/Objetos2/Ventana13.obj");
 	Model Ventana14((char*)"Models/Objetos2/Ventana14.obj");
 	Model Ventana15((char*)"Models/Objetos2/Ventana15.obj");
+	Model Ventana16((char*)"Models/Objetos2/Ventana16.obj");
 
 	Model VentanaT2_1((char*)"Models/Objetos2/VentanaT2_1.obj");
 	Model VentanaT2_2((char*)"Models/Objetos2/VentanaT2_2.obj");
@@ -249,6 +257,7 @@ int main()
 	Model VentanaT2_8((char*)"Models/Objetos2/VentanaT2_8.obj");
 
 	Model PuertaPrincipal((char*)"Models/Objetos2/PuertaPrincipal.obj");
+	Model PuertaCuarto((char*)"Models/Objetos2/puertaCuarto.obj");
 	Model Puerta2((char*)"Models/Objetos2/Puerta2.obj");
 	Model Zaguan1((char*)"Models/Objetos2/Zaguan1.obj");
 	Model Zaguan2((char*)"Models/Objetos2/Zaguan2.obj");
@@ -422,19 +431,56 @@ int main()
 		Silla.Draw(lampShader);
 
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
+		//model = glm::rotate(model, glm::radians(rotacion), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::translate(model, glm::vec3(3.3f, 0.0f, -1.45f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		Silla2.Draw(lampShader);
 
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(0.0f, 0.1f, -1.0f));
+		//model = glm::rotate(model, glm::radians(rotacion), glm::vec3(0.0f, 1.0f, 0.0f));
+		model = glm::translate(model, glm::vec3(3.3f, 0.0f, -2.4f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		Silla2.Draw(lampShader);
+
+		model = glm::mat4(1);
+		
+		model = glm::translate(model, glm::vec3(2.1f, 0.0f, -1.45f));
+		model = glm::rotate(model, glm::radians(180.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		Silla2.Draw(lampShader);
+
+		model = glm::mat4(1);
+		
+		model = glm::translate(model, glm::vec3(2.1f, 0.0f, -2.4f));
+		model = glm::rotate(model, glm::radians(180.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		Silla2.Draw(lampShader);
+
+		model = glm::mat4(1);
+		
+		model = glm::translate(model, glm::vec3(2.7f, 0.0f, -0.5f));
+		model = glm::rotate(model, glm::radians(-90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		Silla2.Draw(lampShader);
+
+		model = glm::mat4(1);
+		
+		model = glm::translate(model, glm::vec3(2.7f, 0.0f, -2.95f));
+		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		Silla2.Draw(lampShader);
 
 		
+
+		
 		model = glm::mat4(1);
-		//model = glm::rotate(model, glm::radians(rotacion), glm::vec3(0.0f, 1.0f, 0.0f));
-		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
+		model = glm::translate(model, glm::vec3(5.15f,0.0f,2.35f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		SillaE.Draw(lampShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(6.3f,0.0f,2.35f));
+		model = glm::rotate(model, glm::radians(90.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		SillaE.Draw(lampShader);
 
@@ -452,6 +498,33 @@ int main()
 		//model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		Sofa.Draw(lampShader);
+
+		//Segundo piso _________________________________________________________
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		Sillon.Draw(lampShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		Escritorio.Draw(lampShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		SillaEscritorio.Draw(lampShader);
+
+		//model = glm::mat4(1);
+		////model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//Cama.Draw(lampShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		Cuadro.Draw(lampShader);
+
 
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
@@ -528,6 +601,11 @@ int main()
 		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		Ventana15.Draw(lampShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		Ventana16.Draw(lampShader);
 
 
 
