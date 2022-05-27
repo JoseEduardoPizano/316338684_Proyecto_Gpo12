@@ -1130,19 +1130,9 @@ void KeyCallback(GLFWwindow *window, int key, int scancode, int action, int mode
 			printf("Puertas Activadas\n"); 
 			puerta = true; }
 
-			if (ventana == true) {
-				printf("Ventanas 1 desactivadas\n");
-				ventana = false;
-			}
-			if (ventana2 == true) {
-				printf("Ventanas 2 desactivadas\n");
-				ventana2 = false;
-			}
-			 
-			if (piscinaEncendida == true) {
-				printf("Piscina Desactivasas\n");
-				piscinaEncendida = false;
-			}
+			if (ventana == true)  {printf("Ventanas 1 desactivadas\n");ventana = false;}
+			if (ventana2 == true) {printf("Ventanas 2 desactivadas\n");ventana2 = false;} 
+			if (piscinaEncendida == true) {printf("Piscina Desactivasas\n");piscinaEncendida = false;}
 	}
 	if (keys[GLFW_KEY_N])
 	{
@@ -1153,18 +1143,9 @@ void KeyCallback(GLFWwindow *window, int key, int scancode, int action, int mode
 		else {
 			printf("Piscina Activadas\n");
 			piscinaEncendida = true;
-			if (ventana == true) {
-				 printf("Ventanas 1 desactivadas\n");
-				ventana = false;
-			}
-			if (ventana2 == true) {
-				printf("Ventanas 2 desactivadas\n");
-				ventana2 = false;
-			}
-			if (puerta == true) {
-				printf("Puertas Desactivasas\n");
-				puerta = false;
-			} 
+			if (ventana == true) {printf("Ventanas 1 desactivadas\n");ventana = false;}
+			if (ventana2 == true) {	printf("Ventanas 2 desactivadas\n");ventana2 = false;}
+			if (puerta == true) {printf("Puertas Desactivasas\n");puerta = false;} 
 		}
 	}
 	
