@@ -1,0 +1,26 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(514,5): warning MSB8028: El directorio intermedio (Debug\) contiene archivos compartidos de otro proyecto (P8_1.vcxproj). Esto puede dar lugar a un comportamiento incorrecto de limpieza y recompilación.
+  iluminacion2.cpp
+C:\Users\lalop\OneDrive\Documentos\Repositorio\316338684_Proyecto_Gpo12\ProyectoFinal\P8_1\iluminacion2.cpp(328,24): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\lalop\OneDrive\Documentos\Repositorio\316338684_Proyecto_Gpo12\ProyectoFinal\P8_1\iluminacion2.cpp(363,20): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+C:\Users\lalop\OneDrive\Documentos\Repositorio\316338684_Proyecto_Gpo12\ProyectoFinal\P8_1\iluminacion2.cpp(364,20): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+C:\Users\lalop\OneDrive\Documentos\Repositorio\316338684_Proyecto_Gpo12\ProyectoFinal\P8_1\iluminacion2.cpp(365,20): warning C4244: '=': conversión de 'double' a 'T'; posible pérdida de datos
+          with
+          [
+              T=float
+          ]
+C:\Users\lalop\OneDrive\Documentos\Repositorio\316338684_Proyecto_Gpo12\ProyectoFinal\P8_1\iluminacion2.cpp(731,23): warning C4244: '=': conversión de 'double' a 'float'; posible pérdida de datos
+C:\Users\lalop\OneDrive\Documentos\Repositorio\316338684_Proyecto_Gpo12\ProyectoFinal\P8_1\iluminacion2.cpp(1413,11): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\lalop\OneDrive\Documentos\Repositorio\316338684_Proyecto_Gpo12\ProyectoFinal\P8_1\iluminacion2.cpp(1414,11): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\lalop\OneDrive\Documentos\Repositorio\316338684_Proyecto_Gpo12\ProyectoFinal\P8_1\iluminacion2.cpp(1418,18): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\lalop\OneDrive\Documentos\Repositorio\316338684_Proyecto_Gpo12\ProyectoFinal\P8_1\iluminacion2.cpp(1419,18): warning C4244: 'inicializando': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\lalop\OneDrive\Documentos\Repositorio\316338684_Proyecto_Gpo12\ProyectoFinal\P8_1\iluminacion2.cpp(1421,10): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+C:\Users\lalop\OneDrive\Documentos\Repositorio\316338684_Proyecto_Gpo12\ProyectoFinal\P8_1\iluminacion2.cpp(1422,10): warning C4244: '=': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+  P8_1.vcxproj -> C:\Users\lalop\OneDrive\Documentos\Repositorio\316338684_Proyecto_Gpo12\ProyectoFinal\Debug\P9.exe
