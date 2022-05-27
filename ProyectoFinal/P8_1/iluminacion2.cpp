@@ -34,9 +34,9 @@ const GLuint WIDTH = 800, HEIGHT = 600;
 int SCREEN_WIDTH, SCREEN_HEIGHT;
 
 // Camera
-Camera  camera(glm::vec3(10.0f, 6.0f, 3.0f));
-GLfloat lastX = WIDTH / 2.0;
-GLfloat lastY = HEIGHT / 2.0;
+Camera  camera(glm::vec3(10.0f, 6.0f, 5.0f));
+GLfloat lastX = WIDTH / -2.0;
+GLfloat lastY = HEIGHT / -2.0;
 bool keys[1024];
 bool firstMouse = true;
 // Light attributes
@@ -48,13 +48,40 @@ float rotacion;
 
 
 bool ventana = false;
-float transVent1;
-float transVent2;
-float transVent3;
-float transVent4;
-float transVent5;
-float transVent6;
-float transVent7;
+float transVent1 = 0.0;
+float transVent2 = 0.0;
+float transVent3 = 0.0;
+float transVent4 = 0.0;
+float transVent5 = 0.0;
+float transVent6 = 0.0;
+float transVent7 = 0.0;
+float transVent8 = 0.0;
+float transVent9 = 0.0;
+float transVent10 = 0.0;
+float transVent11 = 0.0;
+float transVent12 = 0.0;
+float transVent13 = 0.0;
+float transVent14 = 0.0;
+float transVent15 = 0.0;
+
+bool ventAbrir1S1 = false;
+bool ventAbrir2S1 = false;
+bool ventCerrar1S1 = true;
+
+bool ventAbrir1S3 = false;
+bool ventAbrir2S3 = false;
+bool ventCerrar1S3 = true;
+
+bool ventAbrir1S2 = false;
+bool ventAbrir2S2 = false;
+bool ventAbrir3S2 = false;
+bool ventCerrar1S2 = true;
+
+bool ventAbrir1S4 = false;
+bool ventAbrir2S4 = false;
+bool ventAbrir3S4 = false;
+bool ventCerrar1S4 = true;
+
 
 bool ventana2 = false;
 float rotVent1;
@@ -228,7 +255,8 @@ int main()
 	Model Cuadro((char*)"Models/Objetos2/Cuadro.obj");
 	Model Escritorio((char*)"Models/Objetos2/Escritorio.obj");
 	Model SillaEscritorio((char*)"Models/Objetos2/SillaDeEscritorio.obj");
-	//Model Cama((char*)"Models/Objetos2/Cama.obj");
+	Model Cama((char*)"Models/Objetos2/Cama.obj");
+	Model Buro((char*)"Models/Objetos2/buro.obj");
 
 	Model Ventana1((char*)"Models/Objetos2/Ventana1.obj");
 	Model Ventana2((char*)"Models/Objetos2/Ventana2.obj");
@@ -520,10 +548,15 @@ int main()
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		SillaEscritorio.Draw(lampShader);
 
-		//model = glm::mat4(1);
-		////model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
-		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		//Cama.Draw(lampShader);
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		Cama.Draw(lampShader);
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		Buro.Draw(lampShader);
 
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
@@ -531,51 +564,60 @@ int main()
 		Cuadro.Draw(lampShader);
 
 
-		glEnable(GL_BLEND);//Avtiva la funcionalidad para trabajar el canal alfa
-		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-
-		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		glUniform1i(glGetUniformLocation(lightingShader.Program, "ActivaTransparencia"), 0);
-		//Ventana1.Draw(lightingShader);
-		glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0, 1.0, 1.0, 0.25);
-		Ventana1.Draw(lightingShader);
-		glDisable(GL_BLEND);  //Desactiva el canal alfa 
-
-		/*model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
-		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
-		Ventana1.Draw(lampShader);*/
-		
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		PuertaCuarto.Draw(lampShader);
+		
+
+
+		//glEnable(GL_BLEND);//Avtiva la funcionalidad para trabajar el canal alfa
+		//glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+		//model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
+		//glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		//glUniform1i(glGetUniformLocation(lightingShader.Program, "ActivaTransparencia"), 0);
+		////Ventana1.Draw(lightingShader);
+		//glUniform4f(glGetUniformLocation(lightingShader.Program, "colorAlpha"), 1.0, 1.0, 1.0, 0.25);
+		//Ventana1.Draw(lightingShader);
+		//glDisable(GL_BLEND);  //Desactiva el canal alfa 
+
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, 0.1f, transVent1));
+		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+		Ventana1.Draw(lampShader);
+		
+		model = glm::mat4(1);
+		model = glm::translate(model, glm::vec3(0.0f, 0.1f, transVent2));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		Ventana2.Draw(lampShader);
 
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
+		model = glm::translate(model, glm::vec3(0.0f, 0.1f, transVent3));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		Ventana3.Draw(lampShader);
 
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
+		model = glm::translate(model, glm::vec3(0.0f, 0.1f, transVent4));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		Ventana4.Draw(lampShader);
 
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
+		model = glm::translate(model, glm::vec3(0.0f, 0.1f, transVent5));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		Ventana5.Draw(lampShader);
 
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
+		model = glm::translate(model, glm::vec3(0.0f, 0.1f, transVent6));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		Ventana6.Draw(lampShader);
 
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
+		model = glm::translate(model, glm::vec3(0.0f, 0.1f, transVent7));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		Ventana7.Draw(lampShader);
+
+
 
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
@@ -583,14 +625,17 @@ int main()
 		Ventana8.Draw(lampShader);
 
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
+		model = glm::translate(model, glm::vec3(0.0f, 0.1f, transVent9));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		Ventana9.Draw(lampShader);
 
 		model = glm::mat4(1);
-		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
+		model = glm::translate(model, glm::vec3(0.0f, 0.1f, transVent10));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		Ventana10.Draw(lampShader);
+
+
+
 		model = glm::mat4(1);
 		model = glm::translate(model, glm::vec3(0.0f, 0.1f, 0.0f));
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
@@ -861,7 +906,126 @@ void DoMovement()
 	if (ventAbrir8  == true) { if (rotVent8 > 90.0) { ventAbrir8 = false; } else { rotVent8 += 0.1f; } }
 	if (ventCerrar8 == true) { if (rotVent8 < 0.0) { ventCerrar8 = false; } else { rotVent8 -= 0.1f; } }
 
+	
 
+	if (ventana == true) {
+		if (ventAbrir1S1 == true) {
+			if (transVent2 > -0.3 && transVent2 < 0.81) {
+				transVent2 += 0.01f;
+			}
+		}else if (ventAbrir2S1 == true) {
+			if (transVent2 <= 0.93 && transVent2 > 0.0) {
+				transVent2 -= 0.01f;
+			}
+			if (transVent1 < 0.33 && transVent1 > -0.8) {
+				transVent1 -= 0.01f;
+			}
+		}else if (ventCerrar1S1 == true) {
+			if (transVent1 < 0.0 && transVent1 > -0.85) {
+				transVent1 += 0.01f;
+			}
+		}
+
+
+		if (ventAbrir1S3 == true) {
+			if (transVent7 > -0.3 && transVent7 < 1.41) {
+				transVent7 += 0.01f;
+			}
+		}
+		else if (ventAbrir2S3 == true) {
+			if (transVent7 <= 1.53 && transVent7 > 0.0) {
+				transVent7 -= 0.01f;
+			}
+			if (transVent6 < 0.33 && transVent6 > -1.4) {
+				transVent6 -= 0.01f;
+			}
+		}
+		else if (ventCerrar1S3 == true) {
+			if (transVent6 < 0.0 && transVent6 > -1.45) {
+				transVent6 += 0.01f;
+			}
+		}
+
+
+
+
+
+		if (ventAbrir1S2 == true) {
+			if (transVent4 > -0.3 && transVent4 < 1.51) {
+				transVent4 += 0.01f;
+			}
+		}
+		else if (ventAbrir2S2 == true) {
+			if (transVent5 > -0.3 && transVent5 < 2.95) {
+				transVent5 += 0.01f;
+			}
+		}
+		else if (ventAbrir3S2 == true) {
+			if (transVent4 <= 1.53 && transVent4 > -1.5) {
+				transVent4 -= 0.01f;
+			}
+			if (transVent3 < 0.1 && transVent3 > -2.95) {
+				transVent3 -= 0.01f;
+			}
+			if (transVent5 > 0.0 && transVent5 <= 2.97) {
+				transVent5 -= 0.01f;
+			}
+		}
+		else if (ventCerrar1S2 == true) {
+			if (transVent4 >= -1.6 && transVent4 < 0.0) {
+				transVent4 += 0.01f;
+			}
+			if (transVent3 >= -3 && transVent3 < 0.0) {
+				transVent3 += 0.01f;
+			}
+		}
+
+
+
+
+
+
+
+		if (ventAbrir1S4 == true) {
+			if (transVent9 > -0.3 && transVent9 < 1.51) {
+				transVent9 += 0.01f;
+			}
+		} else if (ventAbrir2S4 == true) {
+			if (transVent10 > -0.3 && transVent10 < 2.9) {
+				transVent10 += 0.01f;
+			}
+		} else if (ventAbrir3S4 == true) {
+			if (transVent9 <= 1.53 && transVent9 > 0.0) {
+				transVent9 -= 0.01f;
+			}
+			
+		}else if (ventCerrar1S4 == true) {
+			if (transVent10 > 0.0 && transVent10 < 2.95) {
+				transVent10 -= 0.01f;
+			}
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	}
 
 	if (keys[GLFW_KEY_1]) { x -= 0.05f;}
 	if (keys[GLFW_KEY_2]) { x += 0.05f;}
@@ -906,6 +1070,7 @@ void KeyCallback(GLFWwindow *window, int key, int scancode, int action, int mode
 		}
 	}
 
+
 	if (keys[GLFW_KEY_V])
 	{
 		if (ventana == true) {
@@ -915,8 +1080,22 @@ void KeyCallback(GLFWwindow *window, int key, int scancode, int action, int mode
 		else { 
 			printf("Ventanas 1 Activadas\n"); 
 			ventana = true; 
+
+			if (ventana2 == true) {
+				printf("Ventanas 2 desactivadas\n");
+				ventana2 = false;
+			}
+			if (puerta == true) {
+				printf("Puertas Desactivasas\n");
+				puerta = false;
+			}
+			if (piscinaEncendida == true) {
+				printf("Piscina Desactivasas\n");
+				piscinaEncendida = false;
+			}
 		}
 	}
+
 	if (keys[GLFW_KEY_B])
 	{
 		if (ventana2 == true) { 
@@ -924,7 +1103,21 @@ void KeyCallback(GLFWwindow *window, int key, int scancode, int action, int mode
 			ventana2 = false; 
 		}else { 
 			printf("Ventanas 2 Activadas\n");
-			ventana2 = true; 
+			ventana2 = true;
+
+			if (ventana == true) {
+				printf("Ventanas 1 desactivadas\n");
+				ventana = false;
+			}
+
+			if (puerta == true) {
+				printf("Puertas Desactivasas\n");
+				puerta = false;
+			}
+			if (piscinaEncendida == true) {
+				printf("Piscina Desactivasas\n");
+				piscinaEncendida = false;
+			}
 		}
 	}
 
@@ -936,6 +1129,20 @@ void KeyCallback(GLFWwindow *window, int key, int scancode, int action, int mode
 		else { 
 			printf("Puertas Activadas\n"); 
 			puerta = true; }
+
+			if (ventana == true) {
+				printf("Ventanas 1 desactivadas\n");
+				ventana = false;
+			}
+			if (ventana2 == true) {
+				printf("Ventanas 2 desactivadas\n");
+				ventana2 = false;
+			}
+			 
+			if (piscinaEncendida == true) {
+				printf("Piscina Desactivasas\n");
+				piscinaEncendida = false;
+			}
 	}
 	if (keys[GLFW_KEY_N])
 	{
@@ -946,17 +1153,132 @@ void KeyCallback(GLFWwindow *window, int key, int scancode, int action, int mode
 		else {
 			printf("Piscina Activadas\n");
 			piscinaEncendida = true;
+			if (ventana == true) {
+				 printf("Ventanas 1 desactivadas\n");
+				ventana = false;
+			}
+			if (ventana2 == true) {
+				printf("Ventanas 2 desactivadas\n");
+				ventana2 = false;
+			}
+			if (puerta == true) {
+				printf("Puertas Desactivasas\n");
+				puerta = false;
+			} 
 		}
 	}
 	
 
-	if (ventana == true && keys[GLFW_KEY_1]) { transVent1 = 1.0; }	else { transVent1 = 0.0; }
-	if (ventana == true && keys[GLFW_KEY_2]) { transVent1 = 1.0; }	else { transVent1 = 0.0; }
-	if (ventana == true && keys[GLFW_KEY_3]) { transVent1 = 1.0; } 	else { transVent1 = 0.0; }
-	if (ventana == true && keys[GLFW_KEY_4]) { transVent1 = 1.0; } 	else { transVent1 = 0.0; }
-	if (ventana == true && keys[GLFW_KEY_5]) { transVent1 = 1.0; } 	else { transVent1 = 0.0; }
-	if (ventana == true && keys[GLFW_KEY_6]) { transVent1 = 1.0; }	else { transVent1 = 0.0; }
-	if (ventana == true && keys[GLFW_KEY_7]) { transVent1 = 1.0; }	else { transVent1 = 0.0; }
+	
+
+	if (ventana == true && keys[GLFW_KEY_1]) {
+		if (ventCerrar1S1 == true) {
+			ventAbrir1S1 = true;
+			ventAbrir2S1 = false;
+			ventCerrar1S1 = false;
+			printf("Seccion 1 Ventana abrir 1\n");
+		}
+		else if (ventAbrir1S1 == true) {
+			ventAbrir1S1 = false;
+			ventAbrir2S1 = true;
+			ventCerrar1S1 = false;
+			printf("Seccion 1 Ventana abrir 2\n");
+		}
+		else {
+			ventAbrir1S1 = false;
+			ventAbrir2S1 = false;
+			ventCerrar1S1 = true;
+
+			printf("Seccion 1 Ventana cerrar\n");
+		}
+	}
+
+	if (ventana == true && keys[GLFW_KEY_3]) {
+		if (ventCerrar1S3 == true) {
+			ventAbrir1S3 = true;
+			ventAbrir2S3 = false;
+			ventCerrar1S3 = false;
+			printf("Seccion 3 Ventana abrir 1\n");
+		}
+		else if (ventAbrir1S3 == true) {
+			ventAbrir1S3 = false;
+			ventAbrir2S3 = true;
+			ventCerrar1S3 = false;
+			printf("Seccion 3 Ventana abrir 2\n");
+		}
+		else {
+			ventAbrir1S3 = false;
+			ventAbrir2S3 = false;
+			ventCerrar1S3 = true;
+			printf("Seccion 3 Ventana cerrar\n");
+		}
+	}
+
+
+	if (ventana == true && keys[GLFW_KEY_2]) {
+		if (ventCerrar1S2 == true) {
+			ventAbrir1S2 = true;
+			ventAbrir2S2 = false;
+			ventAbrir3S2 = false;
+			ventCerrar1S2 = false;
+			printf("Seccion 2 Ventana abrir 1\n");
+		}
+		else if (ventAbrir1S2 == true) {
+			ventAbrir1S2 = false;
+			ventAbrir2S2 = true;
+			ventAbrir3S2 = false;
+			ventCerrar1S2 = false;
+			printf("Seccion 2 Ventana abrir 2\n");
+		}
+		else if (ventAbrir2S2 == true) {
+			ventAbrir1S2 = false;
+			ventAbrir2S2 = false;
+			ventAbrir3S2 = true;
+			ventCerrar1S2 = false;
+			printf("Seccion 2 Ventana abrir 3\n");
+		} else {
+			ventAbrir1S2 = false;
+			ventAbrir2S2 = false;
+			ventAbrir3S2 = false;
+			ventCerrar1S2 = true;
+			printf("Seccion 2 Ventana cerrar\n");
+		}
+	}
+
+	if (ventana == true && keys[GLFW_KEY_4]) {
+		if (ventCerrar1S4 == true) {
+			ventAbrir1S4 = true;
+			ventAbrir2S4 = false;
+			ventAbrir3S4 = false;
+			ventCerrar1S4 = false;
+			printf("Seccion 4 Ventana abrir 1\n");
+		}
+		else if (ventAbrir1S4 == true) {
+			ventAbrir1S4 = false;
+			ventAbrir2S4 = true;
+			ventAbrir3S4 = false;
+			ventCerrar1S4 = false;
+			printf("Seccion 4 Ventana abrir 2\n");
+		}
+		else if (ventAbrir2S4 == true) {
+			ventAbrir1S4 = false;
+			ventAbrir2S4 = false;
+			ventAbrir3S4 = true;
+			ventCerrar1S4 = false;
+			printf("Seccion 4 Ventana abrir 3\n");
+		}
+		else {
+			ventAbrir1S4 = false;
+			ventAbrir2S4 = false;
+			ventAbrir3S4 = false;
+			ventCerrar1S4 = true;
+			printf("Seccion 4 Ventana cerrar\n");
+		}
+	}
+
+	
+
+
 
 	if (ventana2 == true && keys[GLFW_KEY_1]) {
 		if (rotVent1 > 90.0) {
